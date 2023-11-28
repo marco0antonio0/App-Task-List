@@ -26,6 +26,24 @@ Desenvolvido exclusivamente para a plataforma Android, o **Flex Task List** se i
 
 ## Experimente Agora no Github
 
-Transforme a gestão do seu tempo e simplifique sua vida com o **Flex Task List**. Baixe agora na [Github apps](link_da_sua_app_store) e descubra uma forma eficiente de organizar suas tarefas.
+Transforme a gestão do seu tempo e simplifique sua vida com o **Flex Task List**. Baixe agora na [Github apps](https://github.com/marco0antonio0/App-Task-List/releases/tag/v1) e descubra uma forma eficiente de organizar suas tarefas.
 
-_Desenvolvido por Marco A. S. Mesquita - [GitHub](https://github.com/marco0antonio0/App-Task-List)_
+**Desenvolvedor:**
+
+- Marco A. da S. Mesquita
+
+**Web Design:**
+
+- Marco A. da S. Mesquita
+- Alexsandro F. Nascimento
+- Beatriz S. Lisboa
+
+**Modelagem banco de dados e regra de negocio:**
+
+- Marco A. da S. Mesquita
+- Jean A. Dias
+
+**Code review:**
+
+- Alexsandro F. Nascimento
+- Beatriz S. Lisboa
