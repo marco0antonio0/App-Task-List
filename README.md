@@ -1,5 +1,7 @@
 # Flex Task List - Organize suas Tarefas com Facilidade
 
+![img](imagesReadme\image_1.png)
+
 Em um mundo cada vez mais acelerado, a necessidade de organizar nossas responsabilidades diárias torna-se crucial. É nesse contexto que apresento meu aplicativo de lista de tarefas, o **Flex Task List**. Desenvolvido em Flutter e fundamentado em conceitos sólidos de arquitetura MVC (Model-View-Controller), este aplicativo une a elegância do design clean com a eficiência da persistência de dados usando SQFlite, proporcionando uma experiência única no gerenciamento de tarefas.
 
 ## Design Clean para uma Experiência Descomplicada
