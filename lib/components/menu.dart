@@ -16,7 +16,7 @@ class Menu extends StatelessWidget {
     return Column(children: [
       const Spacer(flex: 140),
       Expanded(
-          flex: 25,
+          flex: 19,
           child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 15),
               child: Container(
