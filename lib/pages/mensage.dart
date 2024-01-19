@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:market_flex/components/TituloComponent.dart';
 import 'package:market_flex/components/botao.dart';
 
+// ignore: must_be_immutable
 class PageMensage extends StatelessWidget {
   String msg = 'Voce tem certeza dessa operação?';
   Function fn;
