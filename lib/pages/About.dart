@@ -26,7 +26,7 @@ Dependencias utilizadas
 - flutter_launcher_icons: ^0.13.1
 - flutter_native_splash: ^2.3.6
 \n
-Versão do app: 1.1
+Versão do app: 1.3
 """
   };
   PageAbout({super.key});
