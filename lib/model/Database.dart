@@ -72,7 +72,8 @@ class DatabaseHelper {
     return result.isNotEmpty ? result.first : null;
   }
 
-  Future<void> updateTaskById(int id, String newTitle, String newDesc) async {
+  Future<void> updateTaskById(
+      dynamic id, String newTitle, String newDesc) async {
     Database db = await database;
 
     await db.update(
@@ -83,7 +84,7 @@ class DatabaseHelper {
     );
   }
 
-  Future<void> deleteTaskById(int id) async {
+  Future<void> deleteTaskById(dynamic id) async {
     Database db = await database;
 
     await db.delete(

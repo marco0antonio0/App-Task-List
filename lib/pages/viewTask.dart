@@ -5,11 +5,11 @@ import 'package:market_flex/components/TituloComponent.dart';
 import 'package:market_flex/components/botao.dart';
 import 'package:market_flex/components/menu.dart';
 import 'package:market_flex/components/viewText.dart';
-import 'package:market_flex/model/Routers.dart';
+import 'package:market_flex/model/Animations.dart';
 import 'package:market_flex/pages/editTask.dart';
 
 class PageViewTask extends StatelessWidget {
-  Map<String, String>? data;
+  Map<String, dynamic>? data;
   PageViewTask({super.key, this.data});
 
   @override
@@ -47,11 +47,7 @@ class PageViewTask extends StatelessWidget {
                                   context,
                                   SlidePageRouteToRigth(
                                       builder: (context) => PageEditTask(
-                                            data: {
-                                              'title': data!['title']!,
-                                              "desc": data!["desc"]!,
-                                              "id": data!['id']!
-                                            },
+                                            data: data!,
                                           )));
                             },
                             name: "Edit"

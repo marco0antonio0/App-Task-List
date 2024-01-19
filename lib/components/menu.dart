@@ -1,7 +1,7 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:flutter/material.dart';
-import 'package:market_flex/model/Routers.dart';
+import 'package:market_flex/model/Animations.dart';
 import 'package:market_flex/pages/About.dart';
 import 'package:market_flex/pages/home.dart';
 import 'package:url_launcher/url_launcher.dart';

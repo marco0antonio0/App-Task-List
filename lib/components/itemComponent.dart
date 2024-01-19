@@ -1,21 +1,14 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
-import 'package:market_flex/model/Routers.dart';
+import 'package:market_flex/model/Animations.dart';
 import 'package:market_flex/pages/viewTask.dart';
 
 // ignore: must_be_immutable
 class Item extends StatelessWidget {
-  String? name;
-  String? title;
-  String? desc;
-  int? id;
-  Item(
-      {super.key,
-      this.name = 'Lorem ipsum dolo',
-      this.title,
-      this.desc,
-      this.id});
+  Map<String, dynamic>? data;
+
+  Item({super.key, this.data});
 
   @override
   Widget build(BuildContext context) {
@@ -28,11 +21,7 @@ class Item extends StatelessWidget {
               context,
               SlidePageRouteToRigth(
                   builder: (context) => PageViewTask(
-                        data: {
-                          'title': title!,
-                          "desc": desc!,
-                          "id": id.toString()
-                        },
+                        data: data,
                       )));
         },
         child: Container(
@@ -73,7 +62,7 @@ class Item extends StatelessWidget {
                         // =============================================
                         Align(
                             alignment: Alignment.centerLeft,
-                            child: Text(name!,
+                            child: Text(data!['title']!,
                                 style: const TextStyle(
                                     fontSize: 22,
                                     fontWeight: FontWeight.w600))),

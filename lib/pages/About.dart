@@ -16,6 +16,17 @@ Este aplicativo simplifica o processo de adição de tarefas, eliminando burocra
 Além disso, a visualização clara das tarefas permite uma compreensão rápida e uma visão abrangente do que precisa ser feito. A simplicidade não é apenas uma característica, mas uma filosofia incorporada ao design do aplicativo.
 
 Ao ser desenvolvido exclusivamente para a plataforma Android, o aplicativo se integra perfeitamente ao ecossistema do sistema operacional, garantindo uma experiência fluida e intuitiva.
+\n
+Dependencias utilizadas
+
+- auto_size_text: ^3.0.0
+- sqflite: ^2.0.2+1
+- path_provider: ^2.0.11
+- url_launcher: ^6.2.1
+- flutter_launcher_icons: ^0.13.1
+- flutter_native_splash: ^2.3.6
+\n
+Versão do app: 1.1
 """
   };
   PageAbout({super.key});
@@ -26,11 +37,8 @@ Ao ser desenvolvido exclusivamente para a plataforma Android, o aplicativo se in
         child: Scaffold(
             backgroundColor: const Color(0xffE9E8ED),
             //===================================
-            //===================================
             body: Stack(
               children: [
-                //===================================
-                //===================================
                 //===================================
                 Column(
                   children: [
@@ -51,10 +59,7 @@ Ao ser desenvolvido exclusivamente para a plataforma Android, o aplicativo se in
                     //===================================
                   ],
                   //===================================
-                  //===================================
                 ),
-                //===================================
-                //===================================
                 //===================================
                 Menu(
                   state: const [false, false, true],

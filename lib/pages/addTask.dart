@@ -6,16 +6,26 @@ import 'package:market_flex/components/TituloComponent.dart';
 import 'package:market_flex/components/botao.dart';
 import 'package:market_flex/components/menu.dart';
 import 'package:market_flex/model/Database.dart';
-import 'package:market_flex/model/Routers.dart';
-import 'package:market_flex/model/modelData.dart';
+import 'package:market_flex/model/Animations.dart';
 import 'package:market_flex/pages/home.dart';
 
-class PageAddTask extends StatelessWidget {
+class PageAddTask extends StatefulWidget {
   const PageAddTask({super.key});
 
   @override
+  State<PageAddTask> createState() => _PageAddTaskState();
+}
+
+class _PageAddTaskState extends State<PageAddTask> {
+  // ===================================================================
+  //                   INIT VARS AND CONTROLLERS
+  TextEditingController controllerTitle = TextEditingController();
+  TextEditingController controllerDesc = TextEditingController();
+
+  String erroMensageTitle = '';
+  String erroMensagerDesc = '';
+  @override
   Widget build(BuildContext context) {
-    DataSingleton dataSingleton = DataSingleton();
     DatabaseHelper databaseHelper = DatabaseHelper();
     return SafeArea(
         child: Scaffold(
@@ -35,29 +45,73 @@ class PageAddTask extends StatelessWidget {
                     Expanded(
                         flex: 100,
                         child: SingleChildScrollView(
-                            child: Column(children: [
-                          Campos(
-                            data: const {},
-                          ),
-                          Botao(fn: () async {
-                            // =============================================
-                            //     Faz a verificação se NULO
-                            if (dataSingleton.dataTitle.isNotEmpty) {
+                            child: Container(
+                          padding: const EdgeInsets.symmetric(horizontal: 40),
+                          child: Column(children: [
+                            inputText(
+                                erroMensage: erroMensageTitle,
+                                controller: controllerTitle,
+                                fn: () {
+                                  // =========================================
+                                  //    caso o campo esteja vazio set erro
+                                  if (controllerTitle.text.isEmpty) {
+                                    setState(
+                                        () => erroMensageTitle = 'Campo vazio');
+                                  } else {
+                                    setState(() => erroMensageTitle = '');
+                                  }
+                                },
+                                placeholder: 'Title task'),
+                            inputText(
+                                maxLength: 300,
+                                controller: controllerDesc,
+                                erroMensage: erroMensagerDesc,
+                                fn: () {
+                                  // =========================================
+                                  //    caso o campo esteja vazio set erro
+                                  if (controllerDesc.text.isEmpty) {
+                                    setState(
+                                        () => erroMensagerDesc = 'Campo vazio');
+                                  } else {
+                                    setState(() => erroMensagerDesc = '');
+                                  }
+                                },
+                                maxLines: 8,
+                                placeholder: 'Desc task'),
+                            // ====================================================
+                            //                     margem
+                            const SizedBox(height: 25),
+                            // ====================================================
+                            Botao(fn: () async {
+                              // ===============================
+                              //  verifica se não tem erros
+                              setState(() {
+                                erroMensageTitle = controllerTitle.text.isEmpty
+                                    ? 'Campo vazio'
+                                    : "";
+                                erroMensagerDesc = controllerDesc.text.isEmpty
+                                    ? 'Campo vazio'
+                                    : "";
+                              });
                               // =============================================
-                              //     Faz o Insert na tabela
-                              await databaseHelper.insertTask(
-                                  dataSingleton.dataTitle,
-                                  dataSingleton.dataDesc);
-                              // ignore: use_build_context_synchronously
-                              Navigator.pushAndRemoveUntil(
-                                context,
-                                SlidePageRouteToRigth(
-                                    builder: (context) => const PageHome()),
-                                (route) => false,
-                              );
-                            }
-                          })
-                        ]))),
+                              //     Faz a verificação se NULO
+                              if (erroMensageTitle.isEmpty &&
+                                  erroMensagerDesc.isEmpty) {
+                                // =============================================
+                                //     Faz o Insert na tabela
+                                await databaseHelper.insertTask(
+                                    controllerTitle.text, controllerDesc.text);
+                                // ignore: use_build_context_synchronously
+                                Navigator.pushAndRemoveUntil(
+                                  context,
+                                  SlidePageRouteToRigth(
+                                      builder: (context) => const PageHome()),
+                                  (route) => false,
+                                );
+                              }
+                            })
+                          ]),
+                        ))),
                     //===================================
                     const Spacer(flex: 25)
                     //===================================
